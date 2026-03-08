@@ -15,77 +15,79 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> {
     return Scaffold(
       body: BodyBackground(
         child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 80),
-                Text(
-                  "Set Password",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                Text(
-                  "Minimum length password 8 character with\nLatter and Number combination",
-                  style: TextStyle(
-                    color: Colors.grey.shade800,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.all(24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 80),
+                  Text(
+                    "Set Password",
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
-                ),
-                const SizedBox(height: 24),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(hintText: "Password"),
-                ),
-                const SizedBox(height: 24),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(hintText: "Confirm Password"),
-                ),
-                SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Confirm",
-                    style: TextStyle(color: Colors.white70),
-                  ),
-                ),
-                SizedBox(height: 48),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Have an account?",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black54,
-                      ),
+                  Text(
+                    "Minimum length password 8 character with\nLatter and Number combination",
+                    style: TextStyle(
+                      color: Colors.grey.shade800,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                     ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                            builder: (builder) => LoginScreen(),
-                          ),
-                          (predicate) => false,
-                        );
-                      },
-                      child: Text(
-                        "Sing in",
+                  ),
+                  const SizedBox(height: 24),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(hintText: "Password"),
+                  ),
+                  const SizedBox(height: 24),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(hintText: "Confirm Password"),
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Confirm",
+                      style: TextStyle(color: Colors.white70),
+                    ),
+                  ),
+                  SizedBox(height: 48),
+            
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Have an account?",
                         style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 16,
+                          fontSize: 15,
                           fontWeight: FontWeight.w700,
+                          color: Colors.black54,
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (builder) => LoginScreen(),
+                            ),
+                            (predicate) => false,
+                          );
+                        },
+                        child: Text(
+                          "Sing in",
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

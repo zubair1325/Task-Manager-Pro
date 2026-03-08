@@ -3,11 +3,13 @@ import 'package:task_manager_pro/ui/screens/splash_screen.dart';
 
 class TaskManagerApp extends StatelessWidget {
   const TaskManagerApp({super.key});
-
+  static GlobalKey<NavigatorState> navigationKey = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      navigatorKey: navigationKey,
+      title: "Task Manager Pro+",
       home: SplashScreen(),
       theme: ThemeData(
         inputDecorationTheme: const InputDecorationTheme(
