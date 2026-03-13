@@ -21,11 +21,6 @@ class NetworkCaller {
           "token": AuthController.token.toString(),
         },
       );
-      print("****************");
-      print(AuthController.token.toString());
-      // print(jsonDecode(response.body));
-      // log(response.body.toString());
-      // log(response.statusCode.toString());
       if (response.statusCode == 200) {
         return NetworkResponse(
           isSuccess: true,
@@ -47,7 +42,7 @@ class NetworkCaller {
 
   Future<NetworkResponse> getRequest(String url) async {
     try {
-       await AuthController.checkAuthState();
+      await AuthController.checkAuthState();
       final Response response = await get(
         Uri.parse(url),
         headers: {
@@ -55,7 +50,7 @@ class NetworkCaller {
           "token": AuthController.token.toString(),
         },
       );
-      print(jsonDecode(response.statusCode.toString()));
+
       if (response.statusCode == 200) {
         return NetworkResponse(
           isSuccess: true,
@@ -70,7 +65,6 @@ class NetworkCaller {
         );
       }
     } catch (e) {
-      print(e.toString());
       return NetworkResponse(isSuccess: false, errorMessage: e.toString());
     }
   }

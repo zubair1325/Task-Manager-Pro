@@ -48,8 +48,6 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
     final NetworkResponse response = await NetworkCaller().getRequest(
       Urls.taskStatusCount,
     );
-    print("0000000000000");
-    print(response.statusCode);
     if (response.isSuccess) {
       taskSummaryCountModel = TaskSummaryCountModel.fromJson(
         response.jsonResponse!,

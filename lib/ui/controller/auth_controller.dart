@@ -7,24 +7,22 @@ class AuthController {
   static UserModel? user;
 
   static Future<void> saveUserInformation(String t, UserModel model) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString("token", t);
-    await prefs.setString("user", jsonEncode(model.toJson()));
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.setString("token", t);
+    await preferences.setString("user", jsonEncode(model.toJson()));
     token = t;
     user = model;
   }
 
   static Future<void> initializedUserCache() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    token = prefs.getString("token");
-    print("///////////////////////////////////");
-    print(token);
-    user = UserModel.fromJson(jsonDecode(prefs.getString("user") ?? " {}"));
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    token = preferences.getString("token");
+    user = UserModel.fromJson(jsonDecode(preferences.getString("user") ?? " {}"));
   }
 
   static Future<bool> checkAuthState() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? token = prefs.getString("token");
+    final SharedPreferences preferences = await SharedPreferences.getInstance();
+    String? token = preferences.getString("token");
 
     if (token != null) {
       await initializedUserCache();
@@ -34,8 +32,8 @@ class AuthController {
   }
 
   static Future<void> clearAuthData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.clear();
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.clear();
     token = null;
   }
 }

@@ -10,7 +10,7 @@ class BodyBackground extends StatelessWidget {
     return Stack(
       children: [
         SvgPicture.asset(
-          "images/background.svg",
+          "assets/images/background.svg",
           height: double.infinity,
           width: double.infinity,
           fit: BoxFit.cover,

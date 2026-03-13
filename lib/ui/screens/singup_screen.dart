@@ -168,7 +168,6 @@ class _SingUpScreenState extends State<SingUpScreen> {
           setState(() {});
         }
 
-        print("sinup finle ${_firstNameTEController.text.trim()}");
         final NetworkResponse response = await NetworkCaller().postRequest(
           Urls.registration,
           body: {

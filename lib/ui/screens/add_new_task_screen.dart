@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:task_manager_pro/data/network_caller/network_caller.dart';
 import 'package:task_manager_pro/data/network_caller/network_response.dart';
 import 'package:task_manager_pro/data/utility/urls.dart';
-import 'package:task_manager_pro/ui/screens/new_task_screen.dart';
 import 'package:task_manager_pro/ui/widget/body_background.dart';
 import 'package:task_manager_pro/ui/widget/profile_summary_card.dart';
 import 'package:task_manager_pro/ui/widget/sanck_message.dart';
